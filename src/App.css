@@ -1,0 +1,68 @@
+.group-header {
+  padding: 1rem;
+  margin-bottom: 0;
+  background: #a35dff;
+  color: #fff;
+}
+.group-card {
+  box-shadow: 0 10px 22px -7px #0000002e;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.sidebar .nav .nav-item .nav-link.active .menu-title {
+  color: #b66dff;
+}
+.sidebar .nav .nav-item .nav-link.active .menu-icon {
+  color: #b66dff;
+}
+.nav-tabs .nav-link.active:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  height: 10px;
+  width: 10px;
+  background: inherit;
+  clip-path: polygon(
+    10% 33%,
+    26% 59%,
+    44% 76%,
+    67% 90%,
+    100% 100%,
+    0 100%,
+    0 0
+  );
+}
+.nav-tabs .nav-link {
+  padding: 10px 16px;
+  border: none;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  min-width: 100px;
+  margin-bottom: 0;
+  color: #000;
+}
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  z-index: 1;
+  position: relative;
+}
+.nav-tabs {
+  border: none;
+}
+.modal-dialog.form-moal {
+  max-width: 750px;
+}
+.modal-dialog.form-moal .modal-content {
+  background-color: #fff;
+}
+.form-select,
+.form-control {
+  border-color: #d6dae3;
+}
+.form-select:focus,
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+}
