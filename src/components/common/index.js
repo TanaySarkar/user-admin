@@ -1,4 +1,5 @@
 import Input from './Input';
+import ImageUploader from './ImageUploader';
 import Modal from './Modal';
 import Select from './Select';
 import Table from './Table';
@@ -9,6 +10,7 @@ import ToggleSwitch from './ToggleSwitch';
 
 export {
   Input,
+  ImageUploader,
   Modal,
   Select,
   Table,

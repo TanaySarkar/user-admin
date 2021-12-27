@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import { Table, Modal, Input, ToggleSwitch, Select } from './common';
-import { membersData } from '../services/fackMembers';
-import { citys } from '../services/contries';
+import { Table, Modal, Input, ToggleSwitch, Select } from '../../common';
+import { membersData } from '../../../services/fackMembers';
+import { citys } from '../../../services/contries';
 
 const Member = () => {
   const [data, setData] = useState([]);
@@ -10,10 +10,21 @@ const Member = () => {
     column: 'id',
     order: 'asc',
   });
+  const [countries, setCountries] = useState([]);
 
   const [memberData, setMemberData] = useState();
 
-  useEffect(() => setData(membersData), []);
+  const updateCountries = async () => {
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    setData(membersData);
+    updateCountries();
+  }, []);
 
   const handleToggle = (userId) => {
     const usersData = [...data];
@@ -178,16 +189,16 @@ const Member = () => {
                 name="cityCode"
                 label="Country"
                 classes="col-md-6"
-                options={citys}
-                val={memberData.cityCode}
+                options={countries}
                 onChange={handleInput}
+                defaultValue="IN"
               />
               <Select
                 name="cityCode"
                 label="State"
                 classes="col-md-6"
                 options={citys}
-                val={memberData.cityCode}
+                value={memberData.cityCode}
                 onChange={handleInput}
               />
               <Select
@@ -195,7 +206,7 @@ const Member = () => {
                 label="City"
                 classes="col-md-6"
                 options={citys}
-                val={memberData.cityCode}
+                value={memberData.cityCode}
                 onChange={handleInput}
               />
               <Input

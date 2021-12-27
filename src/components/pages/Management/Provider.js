@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Table, Modal, Input, ToggleSwitch } from './common';
+import { Table, Modal, Input, ToggleSwitch } from '../../common';
 
 const providerData = [
   {

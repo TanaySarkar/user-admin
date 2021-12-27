@@ -1,12 +1,4 @@
-import Member from '../Member';
-import Provider from '../Provider';
-import { Tabs } from '../common';
-
-const usertabs = [
-  { tabName: 'Home', tabFor: 'home', element: <Provider />, active: true },
-  { tabName: 'Profile', tabFor: 'profile', element: <Member /> },
-  { tabName: 'Contact', tabFor: 'contact', element: <p>sfd</p> },
-];
+import { NavLink, Outlet } from 'react-router-dom';
 
 const Management = () => {
   return (
@@ -30,7 +22,24 @@ const Management = () => {
       </div>
       <div className="row">
         <div className="col-lg-12">
-          <Tabs data={usertabs} />
+          <div className="data-tabs">
+            <nav className="nav nav-tabs" id="nav-tab" role="tablist">
+              <NavLink className="nav-link" to="/user-management/provider">
+                Home
+              </NavLink>
+              <NavLink className="nav-link" to="/user-management/profile">
+                Profile
+              </NavLink>
+              <NavLink className="nav-link" to="/user-management/corporate">
+                Corporate
+              </NavLink>
+            </nav>
+            <div className="card">
+              <div className="card-body">
+                <Outlet />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
