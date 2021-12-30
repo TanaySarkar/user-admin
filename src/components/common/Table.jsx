@@ -1,6 +1,6 @@
-import React from "react";
-import TableBody from "./TableBody";
-import TableHeader from "./TableHeader";
+import React from 'react';
+import TableBody from './TableBody';
+import TableHeader from './TableHeader';
 
 const Table = ({ items, columns, onSort, sortColumn }) => (
   <table className="table">

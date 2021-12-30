@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { Input, ToggleSwitch, Select, ImageUploader } from '../common';
 import { citys } from '../../services/contries';
 
 const AddCorporate = () => {
-  const [data, setData] = useState([]);
   const [providerData, setProviderData] = useState();
 
   const handleInput = ({ currentTarget: input }) => {
@@ -14,17 +15,7 @@ const AddCorporate = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const usersData = [...data];
-    const user = usersData.find((p) => p.id === providerData.id);
-
-    for (const prop in providerData) {
-      user[prop] = providerData[prop];
-    }
-
-    setData(usersData);
-
-    let colsePopup = document.getElementById('colsePopup');
-    colsePopup.dispatchEvent(new Event('click'));
+    console.log(providerData);
   };
   return (
     <>
@@ -47,6 +38,28 @@ const AddCorporate = () => {
       </div>
       <div className="card">
         <div className="card-body">
+          <div
+            className="btn-group d-flex mb-5"
+            role="group"
+            aria-label="Basic example"
+          >
+            <NavLink
+              className="btn btn btn-inverse-primary"
+              to="/add-corporate"
+            >
+              Onboard Corporate
+            </NavLink>
+            <NavLink
+              className="btn btn btn-inverse-primary"
+              to="/onboard-employee"
+            >
+              Onboard Corporate Employee
+            </NavLink>
+            <NavLink className="btn btn btn-inverse-primary" to="/user-map">
+              Map Properties
+            </NavLink>
+          </div>
+
           <form onSubmit={handleSubmit}>
             <div className="row">
               <Input
@@ -54,11 +67,13 @@ const AddCorporate = () => {
                 name="name"
                 placeholder="Enter Member Name"
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <ImageUploader
                 label="Upload Corporate Logo"
                 classes="col-md-6"
+                required
                 handleFile={(filedata) => console.log(filedata)}
               />
               <Input
@@ -66,6 +81,7 @@ const AddCorporate = () => {
                 name="ccCode"
                 placeholder="Auto Generate"
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Input
@@ -73,6 +89,7 @@ const AddCorporate = () => {
                 name="contactName"
                 placeholder="Enter Contact Person Name"
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Input
@@ -80,6 +97,7 @@ const AddCorporate = () => {
                 name="contactNumber"
                 placeholder="Enter Contact Number"
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Input
@@ -94,6 +112,7 @@ const AddCorporate = () => {
                 name="email"
                 placeholder="Enter Email ID"
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Input
@@ -120,7 +139,6 @@ const AddCorporate = () => {
                 placeholder="Enter Address Line #2"
                 classes="col-md-6"
                 rows={3}
-                required
                 onChange={handleInput}
               />
               <Select
@@ -129,6 +147,7 @@ const AddCorporate = () => {
                 placeholder="Select Country"
                 options={citys}
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Select
@@ -137,6 +156,7 @@ const AddCorporate = () => {
                 placeholder="Select State"
                 options={citys}
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Select
@@ -145,6 +165,7 @@ const AddCorporate = () => {
                 placeholder="Select City"
                 options={citys}
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <Input
@@ -152,6 +173,7 @@ const AddCorporate = () => {
                 name="postalCode"
                 placeholder="Enter Postal Code"
                 classes="col-md-6"
+                required
                 onChange={handleInput}
               />
               <div className="form-group col-md-6">

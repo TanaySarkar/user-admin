@@ -2,7 +2,8 @@ import React from 'react';
 import './ImageUpload.css';
 import blankImg from './blank.jpg';
 
-const ImageUploader = ({ handleFile, label, classes, error }) => {
+const ImageUploader = (props) => {
+  const { handleFile, label, classes, error } = props;
   const defaultData = {
     name: 'No file chosen',
     url: blankImg,
@@ -28,7 +29,11 @@ const ImageUploader = ({ handleFile, label, classes, error }) => {
 
   return (
     <div className={classes ? `form-group ${classes}` : 'form-group'}>
-      {label && <label>{label}</label>}
+      {label && (
+        <label>
+          {label} {props.required && <span className="text-danger">*</span>}
+        </label>
+      )}
       <div className="file-input d-flex align-items-end">
         <div className="img-group me-3">
           <img className="img" src={fileData.url} alt="" />

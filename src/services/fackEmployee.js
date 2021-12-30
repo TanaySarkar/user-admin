@@ -1,10 +1,10 @@
-export const corporateData = [
+export const employeeData = [
   {
     id: 'CC001',
-    name: 'Corporate #1',
-    dob: '29-Nov-1999',
+    code: 'CC001',
+    name: 'Employee #1',
     email: 'example@mail.com',
-    contactNumber: '987654321',
+    contactNumber: '987654324',
     companyName: 'Company Name #1',
     address: {
       line1: 'Address Line #01',
@@ -29,10 +29,10 @@ export const corporateData = [
   },
   {
     id: 'CC002',
-    name: 'Corporate #2',
-    dob: '29-Nov-1999',
+    code: 'CC002',
+    name: 'Employee #2',
     email: 'example@mail.com',
-    contactNumber: '987654321',
+    contactNumber: '987654323',
     companyName: 'Company Name #2',
     address: {
       line1: 'Address Line #01',
@@ -57,10 +57,10 @@ export const corporateData = [
   },
   {
     id: 'CC003',
-    name: 'Corporate #3',
-    dob: '29-Nov-1999',
+    code: 'CC003',
+    name: 'Employee #3',
     email: 'example@mail.com',
-    contactNumber: '987654321',
+    contactNumber: '987654322',
     companyName: 'Company Name #2',
     address: {
       line1: 'Address Line #01',
@@ -85,8 +85,8 @@ export const corporateData = [
   },
   {
     id: 'CC004',
-    name: 'Corporate #4',
-    dob: '29-Nov-1999',
+    code: 'CC004',
+    name: 'Employee #4',
     email: 'example@mail.com',
     contactNumber: '987654321',
     companyName: 'Company Name #2',

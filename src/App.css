@@ -67,3 +67,42 @@
   outline: none;
   box-shadow: none;
 }
+.fieldset {
+  padding: 25px 15px 15px;
+  position: relative;
+  border: 1px solid;
+  margin-bottom: 40px;
+}
+.fieldset .legend {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 0 5px;
+  transform: translateY(-50%);
+  background: #fff;
+  margin: 0;
+}
+.counter {
+  position: relative;
+  border: 1px solid;
+  padding: 5px !important;
+  width: 200px;
+}
+.counter .btn {
+  padding: 4px 10px;
+  font-size: 26px;
+  line-height: 1;
+  position: absolute;
+  top: 5px;
+}
+
+.counter input {
+  width: 100%;
+  height: 37px;
+  border: none;
+  text-align: center;
+}
+
+.counter .btn.btn-danger {
+  right: 5px;
+}

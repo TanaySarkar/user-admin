@@ -6,6 +6,8 @@ import Member from './pages/Management/Member';
 import Provider from './pages/Management/Provider';
 import Corporate from './pages/Management/Corporate';
 import AddCorporate from './pages/AddCorporate';
+import OnboardEmployee from './pages/OnboardEmployee';
+import UserMap from './pages/UserMap';
 import ErrorPage from './pages/ErrorPage';
 import AppFooter from './AppFooter';
 
@@ -24,7 +26,9 @@ const AppContainer = () => {
               element={<Navigate replace to="/user-management/provider" />}
             />
           </Route>
-          <Route path="add-corporate" element={<AddCorporate />} />
+          <Route path="/add-corporate" element={<AddCorporate />} />
+          <Route path="/onboard-employee" element={<OnboardEmployee />} />
+          <Route path="/user-map" element={<UserMap />} />
           <Route path="/" element={<Navigate replace to="/dashboard" />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
